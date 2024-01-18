@@ -17,7 +17,6 @@
     background-image: url("../img/paris.jpg");
     background-size: cover;
     height: 500px;
-<<<<<<< HEAD
     display: flex;
 }
 
@@ -28,28 +27,4 @@
     width: 400px;
     margin-left: 90px;
     margin-top: 90px;
-=======
-}
-
-.card-title {
-    text-align: center;
-    margin: -30px 30% 0 30%;
-    padding: 5px;
-    border: 2px solid lightblue;
-    background-color: white;
-    border-radius: 10px;
-}
-
-.card-text {
-    margin-top: 20px;
-    margin-bottom: 25px;
-}
-
-.movie-poster {
-    height: 350px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
->>>>>>> main
 }
