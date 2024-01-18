@@ -30,3 +30,4 @@ function updateWeatherData(data) {
     // Process and update your HTML with the weather data
     console.log(data); // For testing purposes
 }
+
