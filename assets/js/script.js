@@ -3,8 +3,8 @@ document.getElementById('cityForm').addEventListener('submit', function(event) {
     var city = document.getElementById('cityInput').value;
     window.location.href = 'landing.html?city=' + encodeURIComponent(city);
   });
-
-  document.getElementById('luckyButton').addEventListener('click', function() {
+  
+  document.getElementById('luckyButton').addEventListener('click', function() {  
     var cities = [
         'Tokyo', 'Delhi', 'Shanghai', 'Sao Paulo', 'Mumbai', 'Beijing', 'Cairo', 'Dhaka', 
         'Mexico City', 'Osaka', 'Karachi', 'Bangalore', 'New York', 'London', 'Bangkok', 
