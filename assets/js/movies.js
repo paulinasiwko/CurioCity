@@ -25,16 +25,17 @@ const options = {
     }
   };
 
-  const movieURL = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1`;
+  const movieURL = `https://api.themoviedb.org/3/movie/top_rated?language=pl`;
   
     fetch(movieURL, options)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
-        console.log(data)
-        let top5 = data.results; // array of 20 elements
+        // console.log(data)
+        let top5 = data.results[0]; // array of 20 elements
+        console.log(top5);
         let moviePoster  = data.results[0].poster_path; // poster of searched movie 
-
+        console.log(moviePoster);
     });
 
