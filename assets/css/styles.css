@@ -17,13 +17,14 @@
     background-image: url("../img/paris.jpg");
     background-size: cover;
     height: 500px;
+    display: flex;
 }
 
-.welcome {
+#welcome-text {
     background-color: rgba(228, 170, 82, 0.5);
     padding: 50px;
     border-radius: 20px;
-    margin-left: 20px;
-    justify-content: right;
-    align-items: center;
+    width: 400px;
+    margin-left: 90px;
+    margin-top: 90px;
 }
