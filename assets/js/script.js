@@ -15,7 +15,7 @@ document.getElementById('cityForm').addEventListener('submit', function(event) {
         'Hanoi', 'Chengdu', 'Kuala Lumpur', 'Santiago', 'Ahmedabad', 'Singapore', 'Shantou', 
         'Ankara', 'Yangon', 'Saint Petersburg', 'Sydney', 'Casablanca', 'Melbourne', 'Abidjan', 
         'Alexandria', 'Kolkata', 'Surat', 'Johannesburg', 'Dar es Salaam', 'Shenyang', 
-        'Xi’an', 'Nairobi', 'Riyadh', 'Hangzhou', 'Miami', 'Quanzhou', 'Kunming', 'Zhengzhou', 
+        'Warsaw', 'Nairobi', 'Riyadh', 'Hangzhou', 'Miami', 'Quanzhou', 'Kunming', 'Zhengzhou', 
         'New Taipei City', 'Chicago', 'Chittagong', 'Taipei', 'Toronto', 'Luanda', 'Khartoum', 
         'Pune', 'Berlin', 'Jeddah', 'Madrid', 'Kyiv', 'Guadalajara', 'Barcelona', 'Izmir', 
         'Kitakyushu', 'Dalian', 'Rome', 'Busan', 'Algiers', 'Cape Town', 'Dubai', 'Montreal', 
