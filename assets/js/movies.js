@@ -6,15 +6,6 @@
 //     }
 // });
 
-// function searchMoviesByCity(city) {
-//     // Use the OMDB API here to search for movies
-//     // Modify according to your needs
-// }
-
-// function displayResults(data) {
-//     // Process and display the movie data in your HTML
-// }
-
 
 // function to get top rated movies from searched country
 const options = {
