@@ -2,11 +2,11 @@ $(document).ready(function() {
     var params = new URLSearchParams(window.location.search);
     var city = params.get('city');
     if (city) {
-        getWeatherData(city); 
+        getWeatherData(city); // changed function name
     }
 });
 
-const apiKey = '1f16e444f57239f90a3d711eb12384dd'; 
+const apiKey = '1f16e444f57239f90a3d711eb12384dd'; // changed to apiKey
 
 async function getCoordinates(cityName) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
