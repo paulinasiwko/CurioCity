@@ -1,37 +1,30 @@
-.landingLogo {
-    width: 60px;
-    margin-top: -10px;
-}
-
-nav {
+.navbar {
     background-color: rgb(202, 250, 250);
     height: 70px;
+}
+
+.catchphrase {
+    margin-left: -50px; 
+}
+
+.navbar-button {
+    background-color: rgb(237, 171, 72); 
+    outline: none; 
+    border-radius: 5px;
 }
 
 .hero {
     background-image: url("../img/paris.jpg");
     background-size: cover;
     height: 500px;
+    display: flex;
 }
 
-.card-title {
-    text-align: center;
-    margin: -30px 30% 0 30%;
-    padding: 5px;
-    border: 2px solid lightblue;
-    background-color: white;
-    border-radius: 10px;
-}
-
-.card-text {
-    margin-top: 20px;
-    margin-bottom: 25px;
-}
-
-.movie-poster {
-    height: 350px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+#welcome-text {
+    background-color: rgba(228, 170, 82, 0.5);
+    padding: 50px;
+    border-radius: 20px;
+    width: 400px;
+    margin-left: 90px;
+    margin-top: 90px;
 }
