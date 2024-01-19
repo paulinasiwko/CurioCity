@@ -2,6 +2,9 @@ const apiKey = '1f16e444f57239f90a3d711eb12384dd'; // Your OpenWeather API Key
 
 // Global variable to store city coordinates
 let cityCoordinates = { lat: 0, lon: 0 };
+let countryID = ''; // Variable to store the country code
+
+window.countryID = '';
 
 async function getCoordinates(cityName) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
@@ -11,6 +14,7 @@ async function getCoordinates(cityName) {
         if (data && data.coord) {
             cityCoordinates.lat = data.coord.lat;
             cityCoordinates.lon = data.coord.lon;
+            countryID = data.sys.country;
             return cityCoordinates;
         }
     } catch (error) {
@@ -28,9 +32,8 @@ async function getWeatherData(cityName) {
         const data = await response.json();
         if (data && data.list && data.city) {
             updateUI(data);
-            if (window.fetchPointsOfInterest) {
-                window.fetchPointsOfInterest(coords.lat, coords.lon);
-            }
+            // Calling function from movies.js
+            window.fetchMoviesByCountry(countryID);
         }
     } catch (error) {
         console.error("Error fetching weather data:", error);
@@ -65,7 +68,12 @@ function getCityCoordinates() {
     return cityCoordinates;
 }
 
-// Initialize when document is loaded
+// Function to get the country ID
+function getCountryID() {
+    return countryID;
+}
+
+// Initialize when the document is loaded
 $(document).ready(function() {
     var params = new URLSearchParams(window.location.search);
     var city = params.get('city');
