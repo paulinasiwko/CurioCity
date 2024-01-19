@@ -1,16 +1,21 @@
 .navbar {
     background-color: rgb(202, 250, 250);
-    height: 70px;
+    height: 80px;
+}
+
+.landing-logo {
+    margin-top: -2px;
 }
 
 .catchphrase {
     margin-left: -50px; 
 }
 
-.navbar-button {
-    background-color: rgb(237, 171, 72); 
+.btn {
+    background-color: rgb(236, 170, 72); 
     outline: none; 
     border-radius: 5px;
+    padding: 8px;
 }
 
 .hero {
