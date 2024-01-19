@@ -22,14 +22,14 @@
     background-image: url("../img/paris.jpg");
     background-size: cover;
     height: 500px;
-    display: flex;
 }
 
-#welcome-text {
+.welcome-text {
     background-color: rgba(228, 170, 82, 0.5);
-    padding: 50px;
+    padding: 40px;
+    justify-content: center;
     border-radius: 20px;
-    width: 400px;
-    margin-left: 90px;
-    margin-top: 90px;
+    width: 600px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
