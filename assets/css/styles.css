@@ -13,3 +13,12 @@ nav {
     background-size: cover;
     height: 500px;
 }
+.py-5{
+    background:#eee;
+    margin-top: 4em;
+}
+.sign-up{
+    background-color: #5caa59;
+    border: 1px solid #5caa59;
+    color: #fff;
+}
