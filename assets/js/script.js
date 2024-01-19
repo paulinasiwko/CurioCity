@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var cityForm = document.getElementById('cityForm');
-  var luckyButton = document.getElementById('luckyButton');
-
-  if(cityForm) {
-      cityForm.addEventListener('submit', function(event) {
-          event.preventDefault();
-          var city = document.getElementById('cityInput').value;
-          window.location.href = 'landing.html?city=' + encodeURIComponent(city);
-      });
-  }
-
-  if(luckyButton) {
-      luckyButton.addEventListener('click', function() {  
+    var cityForm = document.getElementById('cityForm');
+    var luckyButton = document.getElementById('luckyButton');
+  
+    if(cityForm) {
+        cityForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            var city = document.getElementById('cityInput').value;
+            window.location.href = 'landing.html?city=' + encodeURIComponent(city);
+        });
+    }
+  
+    if(luckyButton) {
+        luckyButton.addEventListener('click', function() {  
           var cities = [
       'Tokyo', 'Delhi', 'Shanghai', 'Sao Paulo', 'Mumbai', 'Beijing', 'Cairo', 'Dhaka', 
       'Mexico City', 'Osaka', 'Karachi', 'Bangalore', 'New York', 'London', 'Bangkok', 
