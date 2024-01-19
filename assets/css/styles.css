@@ -24,7 +24,7 @@
     height: 500px;
 }
 
-.welcome-text {
+#welcome-text {
     background-color: rgba(228, 170, 82, 0.5);
     padding: 40px;
     justify-content: center;
