@@ -10,20 +10,32 @@ function fetchMoviesByCountry(countryID) {
   function displayMovies(movies) {
     const moviesDiv = document.getElementById('movies');
     if (!moviesDiv) return;
+
+    console.log(movies);
   
-    moviesDiv.innerHTML = '';
-    const limitedMovies = movies.slice(0, 3)
-    limitedMovies.forEach(movie => {
-        const movieElement = `
-            <div>
-                <h6>${movie.title}</h6>
-                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} poster">
-            </div>
-        `;
-        moviesDiv.innerHTML += movieElement;
-    });
-
-
+    moviesDiv.innerHTML = `
+    <div class="carousel-item active" data-bs-interval="1000">
+        <img src="https://image.tmdb.org/t/p/w500${movies[0].poster_path}" class="carousel-img" alt="${movies[0].title} poster">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>${movies[0].title}</h5>
+            <p>${movies[0].overview}</p>
+        </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+        <img src="https://image.tmdb.org/t/p/w500${movies[1].poster_path}" class="carousel-img" alt="${movies[1].title} poster">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>${movies[1].title}</h5>
+            <p>${movies[1].overview}</p>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <img src="https://image.tmdb.org/t/p/w500${movies[2].poster_path}" class="carousel-img" alt="${movies[2].title} poster">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>${movies[2].title}</h5>
+            <p>${movies[2].overview}</p>
+        </div>
+    </div>
+    `;
   }
   
   function waitForCountryIDAndFetchMovies() {

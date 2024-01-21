@@ -46,14 +46,6 @@ body {
     margin-bottom: 25px;
 }
 
-.movie-poster {
-    height: 350px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
 #weather {
     background: rgb(164,255,255);
     background: linear-gradient(90deg, rgba(164,255,255,1) 0%, rgba(202,255,255,1) 74%, rgba(222,255,255,1) 100%);
@@ -61,6 +53,22 @@ body {
 
 #weather p {
     text-align: left;
+}
+
+.movies-card {
+    background:#eee;
+    border: 1px solid #eee;
+}
+
+.carousel {
+    height: auto;
+    text-align: center;
+}
+
+.carousel-caption {
+    padding: 10px 20px;
+    border: 1px solid white;
+    background-color: rgba(255,255,255,0.7);
 }
 
 footer {
@@ -73,4 +81,11 @@ footer {
     background-color: #5caa59;
     border: 1px solid #5caa59;
     color: #fff;
+}
+
+.carousel-img {
+    object-fit: cover;
+    object-position: center;
+    height: 100vh;
+    overflow: hidden;
 }
