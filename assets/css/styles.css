@@ -50,6 +50,16 @@
     width: 50%;
 }
 
+.py-5{
+    background:#eee;
+    margin-top: 4em;
+}
+.sign-up{
+    background-color: #5caa59;
+    border: 1px solid #5caa59;
+    color: #fff;
+}
+
 #weather {
     background: rgb(164,255,255);
     background: linear-gradient(90deg, rgba(164,255,255,1) 0%, rgba(202,255,255,1) 74%, rgba(222,255,255,1) 100%);
