@@ -18,12 +18,6 @@
     padding: 8px;
 }
 
-.hero {
-    background-image: url("../img/paris.jpg");
-    background-size: cover;
-    height: 500px;
-}
-
 #welcome-text {
     background-color: rgba(228, 170, 82, 0.5);
     padding: 40px;
@@ -54,4 +48,13 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+#weather {
+    background: rgb(164,255,255);
+    background: linear-gradient(90deg, rgba(164,255,255,1) 0%, rgba(202,255,255,1) 74%, rgba(222,255,255,1) 100%);
+}
+
+#weather p {
+    text-align: left;
 }
