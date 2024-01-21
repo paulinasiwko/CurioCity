@@ -1,12 +1,12 @@
 const imagesApiKey = `1f4988b7218778a8ade4218c335534cd`;
 
-$("#searchButton").on("click", function(e) {
-    e.preventDefault();
+// $("#searchButton").on("click", function(e) {
+//     e.preventDefault();
 
-    const tag = $("#cityInput").val().trim() + " city";
+//     const tag = $("#cityInput").val().trim() + " city";
 
-    getImage(tag);
-})
+//     getImage(tag);
+// })
 
 function getImage(tagName) {
     const queryURL = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${imagesApiKey}&tags=${tagName}&format=json&nojsoncallback=1`;
