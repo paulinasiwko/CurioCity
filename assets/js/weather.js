@@ -49,7 +49,6 @@ function formatDate(timestamp) {
 }
 
 function updateUI(weatherData) {
-    console.log(weatherData)
     const currentWeather = weatherData.list[0];
     const todayContainer = document.getElementById('today');
     const mainCardContainer = document.getElementById('main-card');
