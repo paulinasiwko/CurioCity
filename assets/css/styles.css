@@ -1,3 +1,7 @@
+body {
+   background: #eee;
+}
+
 .navbar {
     background-color: rgb(202, 250, 250);
     height: 80px;
@@ -50,16 +54,6 @@
     width: 50%;
 }
 
-.py-5{
-    background:#eee;
-    margin-top: 4em;
-}
-.sign-up{
-    background-color: #5caa59;
-    border: 1px solid #5caa59;
-    color: #fff;
-}
-
 #weather {
     background: rgb(164,255,255);
     background: linear-gradient(90deg, rgba(164,255,255,1) 0%, rgba(202,255,255,1) 74%, rgba(222,255,255,1) 100%);
@@ -67,4 +61,16 @@
 
 #weather p {
     text-align: left;
+}
+
+footer {
+    background:#eee;
+    margin-top: 4em;
+    border-top: 3px solid white;
+}
+
+.sign-up{
+    background-color: #5caa59;
+    border: 1px solid #5caa59;
+    color: #fff;
 }
