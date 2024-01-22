@@ -9,9 +9,9 @@ function getImage(city) {
             return response.json();
         })
         .then(function(data) {
-            const imageServer = data.photos.photo[10].server;
-            const imageId = data.photos.photo[10].id;
-            const imageSecret = data.photos.photo[10].secret;
+            const imageServer = data.photos.photo[3].server;
+            const imageId = data.photos.photo[3].id;
+            const imageSecret = data.photos.photo[3].secret;
 
             const imageURL = `https://live.staticflickr.com/${imageServer}/${imageId}_${imageSecret}_w.jpg`
             
