@@ -34,8 +34,6 @@ function fetchMoviesByCountry(countryID) {
         </div>
     </div>
     `;
-
-    getFood(movies[0].title);
   }
   
   function waitForCountryIDAndFetchMovies() {
@@ -51,42 +49,4 @@ function fetchMoviesByCountry(countryID) {
     }, 5000); // Stop checking after 5 seconds
   }
   
-  
-  function getFood(movieTitle) {
-    const foodAppID = "c2f96cfc";
-    const foodApiKey = "ae1a63d9274452ced8ffd14d5a60ba49";
-
-    const queryURL = `https://api.edamam.com/api/recipes/v2?type=public&q=${movieTitle}&app_id=${foodAppID}&app_key=${foodApiKey}`;
-    fetch(queryURL)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        displayRecipe(data);
-    })
-
-}
-
-function displayRecipe(food) {
-    const recipeName = food.hits[0].recipe.label;
-    const image = food.hits[0].recipe.image;
-    const ingredients = food.hits[0].recipe.ingredientLines;
-    const recipeLink = food.hits[0].recipe.url;
-
-    const foodDiv = document.getElementById("food");
-
-    foodDiv.innerHTML = `
-        <h5 class="card-title">Food that goes great with the movie</h5>
-        <h5 class="foodTitle">${recipeName}</h5>
-        <img src="${image}" alt="${recipeName} photo" class="foodImg">
-        <h6>Ingredients:</h6>
-        <ul>
-            <li>potatoes</li>
-            <li>butter</li>
-        </ul>
-        <p>Link to full recipe: ${recipeLink}</p>
-    `;
-}
-
-
   document.addEventListener('DOMContentLoaded', waitForCountryIDAndFetchMovies);

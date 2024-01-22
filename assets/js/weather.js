@@ -69,7 +69,6 @@ function updateUI(weatherData) {
             <p>Some description about this place</p>
         `;
     }
-
 }
 
 // Function to get the stored city coordinates
