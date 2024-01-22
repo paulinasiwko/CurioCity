@@ -1,66 +1,130 @@
-const exchangeRateApiKey = '6f63f45a62064b29b8c724f0'; // Replace with your API key for currency exchange
+const exchangeRateApiKey = '6f63f45a62064b29b8c724f0'; // Replace with your ExchangeRate API key
 
-console.log("Starting currency_exchange.js");
+// Mapping of country names to currency codes
+const countryCurrencyMapping = {
+  "USA": "USD",
+  "UK": "GBP",
+  "Austria": "EUR",
+  "Belgium": "EUR",
+  "Cyprus": "EUR",
+  "Estonia": "EUR",
+  "Finland": "EUR",
+  "France": "EUR",
+  "Germany": "EUR",
+  "Greece": "EUR",
+  "Ireland": "EUR",
+  "Italy": "EUR",
+  "Latvia": "EUR",
+  "Lithuania": "EUR",
+  "Luxembourg": "EUR",
+  "Malta": "EUR",
+  "Netherlands": "EUR",
+  "Portugal": "EUR",
+  "Slovakia": "EUR",
+  "Slovenia": "EUR",
+  "Spain": "EUR",
+  "Switzerland": "CHF",
+  "Norway": "NOK",
+  "Sweden": "SEK",
+  "Canada": "CAD",
+  "Mexico": "MXN",
+  "Japan": "JPY",
+  "China": "CNY",
+  "India": "INR",
+  "Russia": "RUB",
+  "South Korea": "KRW",
+  "Saudi Arabia": "SAR",
+  "Israel": "ILS",
+  "Brazil": "BRL",
+  "Argentina": "ARS",
+  "South Africa": "ZAR",
+  "Nigeria": "NGN",
+  "Australia": "AUD",
+  "New Zealand": "NZD",
+  "Turkey": "TRY",
+  "Poland": "PLN",
+  "Czech Republic": "CZK",
+  "Hungary": "HUF",
+  "Thailand": "THB",
+  "Singapore": "SGD",
+  "Malaysia": "MYR",
+  "Philippines": "PHP",
+  "Indonesia": "IDR",
+  "Vietnam": "VND",
+  "Egypt": "EGP",
+  "Pakistan": "PKR",
+  "Bangladesh": "BDT",
+  "Colombia": "COP",
+  "Chile": "CLP",
+  "Peru": "PEN",
+  "Venezuela": "VES",
+  "Qatar": "QAR",
+  "United Arab Emirates": "AED",
+};
 
-// Fetches currency code for a given country
-async function getCurrencyCode(countryCode) {
-    const url = `https://restcountries.com/v3.1/alpha/${countryCode}`;
-    try {
-        console.log("Fetching currency code for country:", countryCode);
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log("Received currency data:", data);
-        return data[0].currencies[Object.keys(data[0].currencies)[0]].code;
-    } catch (error) {
-        console.error("Error fetching currency code:", error);
-    }
+// Assuming the function getCountryNameFromWeatherAPI(city) exists and returns the country name based on the city.
+async function getCountryNameFromWeatherAPI(cityName) {
+  try {
+      await getWeatherData(cityName); // Function from weather.js, which sets the global variable countryID
+      return window.countryID; // Returns the variable countryID set by weather.js
+  } catch (error) {
+      console.error("Error getting country name:", error);
+  }
 }
 
-// Converts currency
+// Function to get the currency code based on the country name
+function getCurrencyCode(countryName) {
+  return countryCurrencyMapping[countryName];
+}
+
+// Funkcja do konwersji walut
 async function convertCurrency(amount, fromCurrency, toCurrency) {
     const url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
     try {
-        console.log(`Converting from ${fromCurrency} to ${toCurrency}`);
         const response = await fetch(url);
         const data = await response.json();
         const rate = data.rates[toCurrency];
-        console.log(`Conversion rate from ${fromCurrency} to ${toCurrency}:`, rate);
         return (amount * rate).toFixed(2);
     } catch (error) {
         console.error("Error converting currency:", error);
     }
 }
 
-// Main function to initiate currency conversion
+// Function to convert currencies
+async function convertCurrency(amount, fromCurrency, toCurrency) {
+  const url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
+  try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const rate = data.rates[toCurrency];
+      return (amount * rate).toFixed(2);
+  } catch (error) {
+      console.error("Error converting currency:", error);
+  }
+}
+
+// Main function to initialize currency conversion
 async function initializeCurrencyExchange() {
-    const params = new URLSearchParams(window.location.search);
-    const city = params.get('city');
-    if (!city) return;
+  const params = new URLSearchParams(window.location.search);
+  const city = params.get('city');
+  if (!city) return;
 
-    console.log("City selected:", city);
+  const countryName = await getCountryNameFromWeatherAPI(city); // Assuming this function exists
+  if (!countryName) return;
 
-    const countryID = await window.getCountryID();
-    if (!countryID) return;
+  const currencyCode = getCurrencyCode(countryName);
+  if (!currencyCode) return;
 
-    console.log("Country ID:", countryID);
+  const userAmount = 100; // Example amount
+  const userCurrency = 'USD'; // Example user currency
 
-    const currencyCode = await getCurrencyCode(countryID);
-    if (!currencyCode) return;
+  const convertedAmount = await convertCurrency(userAmount, userCurrency, currencyCode);
 
-    console.log("Currency code:", currencyCode);
-
-    // Temporarily setting a constant amount and user currency
-    const userAmount = 100; // Can be changed to a user-entered value
-    const userCurrency = 'USD'; // Can be changed to a selected user currency
-
-    const convertedAmount = await convertCurrency(userAmount, userCurrency, currencyCode);
-
-    console.log(`Converted amount: ${convertedAmount} ${currencyCode}`);
-
-    const resultContainer = document.getElementById('currency-exchange-result');
-    if (resultContainer) {
-        resultContainer.innerHTML = `City ${city} is in country ${countryID}. They are having ${currencyCode} currency! Here is simple currency exchanger - 100 ${userCurrency} will give you ${convertedAmount} ${currencyCode}!`;
-    }
+  const resultContainer = document.getElementById("main-card");
+  if (resultContainer) {
+      resultContainer.innerHTML = `City ${city} is in ${countryName}. They use ${currencyCode} currency! Here is simple currency exchanger - 100 ${userCurrency} will give you ${convertedAmount} ${currencyCode}!`;
+  }
 }
 
 document.addEventListener('DOMContentLoaded', initializeCurrencyExchange);
+
