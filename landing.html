@@ -31,100 +31,57 @@
   <div class="b-example-divider"></div>
 
   <!-- Hero Section -->
-  <div class="px-4 py-5 my-5 text-center hero">
-    <h1 class="display-5 fw-bold destination-title">Paris, France</h1>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4 destination-text">The Eiffel Tower was supposed to be a temporary installation, intended to
-        stand for 20 years after being built
-        for the 1889 World Fair.</p>
-      </div>
-    </div>
-  </div>
-  <!-- End of Hero Section -->
-
-  <section class="container-fluid mb-5">
+  <section class="px-4 py-5 mt-5 text-center">
     <div class="d-flex flex-row">
-
-      <div id="points-of-interest" class="card w-75 mt-4 me-5">
-
-      </div>
-
-      <div id="weather" class="card w-25 mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Weather</h5>
-          <div id="today"></div>
-        </div>
-      </div>
-
-    </div>
-    <div class="d-flex flex-row">
-
-      <div id="currency-converter" class="card w-50 mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Currency Exchanger</h5>
-          <div class="d-flex justify-content-between">
-            <div class="input-group mb-3">
-              <select id="fromCurrency" class="form-select">
-                <!-- Options for currency -->
-              </select>
-            </div>
-            <div>
-              <input type="number" id="amount" class="form-control" placeholder="Amount" aria-label="Amount">
-            </div>
-            <div class="input-group mb-3">
-              <select id="toCurrency" class="form-select">
-                <!-- Options for currency -->
-              </select>
-            </div>
-            <div>
-              <button onclick="convertCurrency()" class="btn btn-primary">Convert</button>
-            </div>
-          </div>
-          <div id="result" class="result-style">
-            <!-- Conversion result will appear here -->
+      <div class="card w-25">
+        <div id="image-city"></div>
+        <div id="weather" class="card">
+          <div class="card-body">
+            <div id="today"></div>
           </div>
         </div>
       </div>
 
-      <div id="movies" class="card w-50 mt-4">
+      <div id="main-card" class="card w-75"></div>
+    </div>
+  </section>
+
+  <!-- Section with movies and food cards -->
+  <section class="px-4">
+    <div class="d-flex flex-row">
+
+      <div class="card w-50 me-4">
+        <div id="food" class="card-body">
+        </div>
+      </div>
+
+      <div class="card w-50 movies-card">
         <div class="card-body">
           <h5 class="card-title">Movies</h5>
-          <h6>Ratatouille, 2007</h6>
-          <img src="./assets/img/ratatouille.jpg" alt="Ratatouille poster" class="movie-poster">
-          <p class="card-text">A rat who can cook makes an unusual alliance with a young kitchen worker at a famous
-            Paris restaurant.</p>
+          <div id="carousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div id="movies" class="carousel-inner">
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <section class="container-fluid">
-    <!-- <div class="row">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div> -->
-  </section>
-
+  <!-- Footer -->
   <footer class="py-5">
     <div class="container">
     <div class="row">
@@ -189,16 +146,9 @@
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/weather.js"></script>
   <script src="./assets/js/amadeus.js"></script>
+  <script src="./assets/js/flickr.js"></script>
   <script src="./assets/js/movies.js"></script>
-  <script src="./assets/js/currency_exchange.js"></script>
+  <script src="./assets/js/edamam.js"></script>
 </body>
 
 </html>
-
-<!-- PSEUDOCODE -->
-<!-- create navbar with logo image - link to go to homepage (left side); get in touch (right side) -->
-<!-- hero section with background image of the city + a card with the name of the city, country and short description of a place -->
-<!-- first row: 2 columns: card with points of interest and card with weather info -->
-<!-- second row: 2 columns: card with things to do and card with movies -->
-<!-- *carousel with suggested cities -->
-<!-- footer: social media buttons, copyrights -->

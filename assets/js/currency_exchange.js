@@ -1,53 +1,66 @@
-// List of available currencies
-const availableCurrencies = [
-    "USD", "EUR", "GBP", "JPY", "AUD",
-    "CAD", "CHF", "CNY", "SEK", "NZD",
-    "MXN", "SGD", "HKD", "NOK", "KRW",
-    "TRY", "RUB", "INR", "BRL", "ZAR"
-  ];
-  
-  // Function to populate currency selectors
-  function populateCurrencySelectors() {
-    const fromCurrencySelector = document.getElementById('fromCurrency');
-    const toCurrencySelector = document.getElementById('toCurrency');
-  
-    availableCurrencies.forEach(currency => {
-      const fromOption = document.createElement('option');
-      const toOption = document.createElement('option');
-  
-      fromOption.value = toOption.value = currency;
-      fromOption.textContent = toOption.textContent = currency;
-  
-      fromCurrencySelector.appendChild(fromOption);
-      toCurrencySelector.appendChild(toOption);
-    });
-  }
-  
-  // Function to exchange currencies
-  async function convertCurrency() {
-    let amount = document.getElementById('amount').value;
-    let fromCurrency = document.getElementById('fromCurrency').value;
-    let toCurrency = document.getElementById('toCurrency').value;
-    let apiKey = '6f63f45a62064b29b8c724f0';
-  
-    let url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
-  
+const exchangeRateApiKey = '6f63f45a62064b29b8c724f0'; // Replace with your API key for currency exchange
+
+console.log("Starting currency_exchange.js");
+
+// Fetches currency code for a given country
+async function getCurrencyCode(countryCode) {
+    const url = `https://restcountries.com/v3.1/alpha/${countryCode}`;
     try {
-      let response = await fetch(url);
-      let data = await response.json();
-  
-      if (data.error) {
-        throw new Error(data.error);
-      }
-  
-      let rate = data.rates[toCurrency];
-      let result = amount * rate;
-      document.getElementById('result').innerText = `Result: ${result.toFixed(2)} ${toCurrency}`;
+        console.log("Fetching currency code for country:", countryCode);
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log("Received currency data:", data);
+        return data[0].currencies[Object.keys(data[0].currencies)[0]].code;
     } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred while converting currencies. Check the console for details.');
+        console.error("Error fetching currency code:", error);
     }
-  }
-  
-  // Invoke the function to populate the selectors when the page loads
-  document.addEventListener('DOMContentLoaded', populateCurrencySelectors);
+}
+
+// Converts currency
+async function convertCurrency(amount, fromCurrency, toCurrency) {
+    const url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
+    try {
+        console.log(`Converting from ${fromCurrency} to ${toCurrency}`);
+        const response = await fetch(url);
+        const data = await response.json();
+        const rate = data.rates[toCurrency];
+        console.log(`Conversion rate from ${fromCurrency} to ${toCurrency}:`, rate);
+        return (amount * rate).toFixed(2);
+    } catch (error) {
+        console.error("Error converting currency:", error);
+    }
+}
+
+// Main function to initiate currency conversion
+async function initializeCurrencyExchange() {
+    const params = new URLSearchParams(window.location.search);
+    const city = params.get('city');
+    if (!city) return;
+
+    console.log("City selected:", city);
+
+    const countryID = await window.getCountryID();
+    if (!countryID) return;
+
+    console.log("Country ID:", countryID);
+
+    const currencyCode = await getCurrencyCode(countryID);
+    if (!currencyCode) return;
+
+    console.log("Currency code:", currencyCode);
+
+    // Temporarily setting a constant amount and user currency
+    const userAmount = 100; // Can be changed to a user-entered value
+    const userCurrency = 'USD'; // Can be changed to a selected user currency
+
+    const convertedAmount = await convertCurrency(userAmount, userCurrency, currencyCode);
+
+    console.log(`Converted amount: ${convertedAmount} ${currencyCode}`);
+
+    const resultContainer = document.getElementById('currency-exchange-result');
+    if (resultContainer) {
+        resultContainer.innerHTML = `City ${city} is in country ${countryID}. They are having ${currencyCode} currency! Here is simple currency exchanger - 100 ${userCurrency} will give you ${convertedAmount} ${currencyCode}!`;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initializeCurrencyExchange);
