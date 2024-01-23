@@ -240,3 +240,20 @@ footer {
     height: 100vh;
     overflow: hidden;
 }
+
+.hero-section .row {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero-section .card {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* For larger screens */
+@media (min-width: 768px) {
+    .hero-section .row {
+        max-width: 1140px;
+    }
+}
