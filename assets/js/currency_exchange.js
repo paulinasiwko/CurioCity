@@ -125,7 +125,10 @@ async function initializeCurrencyExchange() {
 
   const resultContainer = document.getElementById("currency-exchange");
   if (resultContainer) {
-      resultContainer.innerHTML = `City ${city} is in ${countryName}. They use ${currencyCode} currency! Here is simple currency exchanger - 100 ${userCurrency} will give you ${convertedAmount} ${currencyCode}!`;
+      resultContainer.innerHTML = `
+      <h5 class="card-title">Currency exchange</h5>
+      City ${city} is in ${countryName}. They use ${currencyCode} currency! Here is simple currency exchanger - 100 ${userCurrency} will give you ${convertedAmount} ${currencyCode}!
+      `;
   }
 }
 

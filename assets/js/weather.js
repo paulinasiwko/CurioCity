@@ -51,7 +51,7 @@ function formatDate(timestamp) {
 function updateUI(weatherData) {
     const currentWeather = weatherData.list[0];
     const todayContainer = document.getElementById('today');
-    const mainCardContainer = document.getElementById('main-card');
+    const mainCardContainer = document.getElementById('description');
     if (todayContainer) {
         todayContainer.innerHTML = `
             <h4>Current Weather in ${weatherData.city.name}</h4>            
@@ -65,7 +65,7 @@ function updateUI(weatherData) {
 
     if (mainCardContainer) {
         mainCardContainer.innerHTML = `
-            <h1>${weatherData.city.name}, ${weatherData.city.country}</h1>
+            <h5 class="card-title">${weatherData.city.name}, ${weatherData.city.country}</h5>
             <p>Some description about this place</p>
         `;
     }
