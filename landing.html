@@ -59,18 +59,20 @@
     </div>
   </section>
 
-  <!-- Section with movies and food cards -->
-  <section class="px-4">
-    <div class="d-flex flex-row">
+<!-- Section with movies and food cards -->
+<section class="px-4">
+  <div class="row">
 
-      <div class="card w-50 me-4">
-        <div id="food" class="card-body">
-        </div>
+    <div class="col-md-6">
+      <div id="food" class="card">
+        <!-- Food content goes here -->
       </div>
+    </div>
 
-      <div class="card w-50 movies-card">
+    <div class="col-md-6">
+      <div class="card movies-card">
         <div class="card-body">
-          <h5 class="card-title">Movies</h5>
+          <h5 class="card-title">Movies that are popular in your city!</h5>
           <div id="carousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -78,7 +80,7 @@
               <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div id="movies" class="carousel-inner">
-
+              <!-- Movie carousel content goes here -->
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -86,13 +88,16 @@
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+              <span class "visually-hidden">Next</span>
             </button>
           </div>
         </div>
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
+
 
 <!-- Footer -->
 <footer class="py-5">

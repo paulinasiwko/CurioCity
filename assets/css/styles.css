@@ -257,3 +257,34 @@ footer {
         max-width: 1140px;
     }
 }
+
+/* Ensuring equal height for cards in a row */
+.row-equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-equal-height > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    flex: 1;
+    margin: 10px; /* Adjusting margin for spacing */
+}
+
+/* Responsive padding and margin adjustments */
+@media (max-width: 768px) {
+    .card {
+        margin: 5px;
+    }
+}
+
+/* Optional: Additional card styling */
+.card {
+    background-color: #fff; /* Example background color */
+    border: 1px solid #ddd; /* Example border */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
