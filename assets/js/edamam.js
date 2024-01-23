@@ -10,7 +10,6 @@ function getFood(cityName) {
         return response.json();
     })
     .then(function(data) {
-        console.log(data);
         displayRecipe(data);
     })
 
@@ -39,7 +38,6 @@ function displayRecipe(food) {
         const ingredientEl = document.createElement("li");
         ingredientEl.textContent = ingredient;
         foodDiv.append(ingredientEl);
-        console.log(ingredient);
     }
 }
 
