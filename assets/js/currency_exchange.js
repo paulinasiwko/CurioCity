@@ -123,7 +123,7 @@ async function initializeCurrencyExchange() {
 
   const convertedAmount = await convertCurrency(userAmount, userCurrency, currencyCode);
 
-  const resultContainer = document.getElementById("main-card");
+  const resultContainer = document.getElementById("currency-exchange");
   if (resultContainer) {
       resultContainer.innerHTML = `City ${city} is in ${countryName}. They use ${currencyCode} currency! Here is simple currency exchanger - 100 ${userCurrency} will give you ${convertedAmount} ${currencyCode}!`;
   }

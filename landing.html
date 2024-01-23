@@ -30,23 +30,44 @@
   </nav>
   <div class="b-example-divider"></div>
 
-  <!-- Hero Section -->
-  <section class="px-4 py-5 mt-5 text-center">
-    <div class="d-flex flex-row">
-      <div class="card w-25">
-        <div id="image-city"></div>
-        <div id="weather" class="card">
+<!-- Hero Section -->
+<section class="py-5 py-5 mt-5 text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <!-- Left Card with Weather and City Image -->
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <div id="image-city"></div>
+        </div>
+        <div class="card">
           <div class="card-body">
             <div id="today"></div>
           </div>
         </div>
       </div>
 
-      <div id="main-card" class="card w-75">
-        <div id="currency-exchange"></div>
+      <!-- Right Column for Main Cards -->
+      <div class="col-md-8">
+
+        <!-- New Description Card -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <p>Here is the description content...</p>
+          </div>
+        </div>
+
+        <!-- Currency Exchange Card -->
+        <div class="card">
+          <div class="card-body" id="currency-exchange">
+          </div>
+        </div>
+
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Section with movies and food cards -->
   <section class="px-4">
@@ -147,7 +168,7 @@
 
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/weather.js"></script>
-  <!-- <script src="./assets/js/amadeus.js"></script> -->
+  <script src="./assets/js/currency_exchange.js"></script>
   <script src="./assets/js/flickr.js"></script>
   <script src="./assets/js/movies.js"></script>
   <script src="./assets/js/edamam.js"></script>
