@@ -14,7 +14,7 @@ async function getCoordinates(cityName) {
         if (data && data.coord) {
             cityCoordinates.lat = data.coord.lat;
             cityCoordinates.lon = data.coord.lon;
-            countryID = data.sys.country;
+            window.countryID = data.sys.country;
             return cityCoordinates;
         }
     } catch (error) {
