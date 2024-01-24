@@ -242,7 +242,6 @@ const currencyCodeToNameMapping = {
     "UAH": "Ukrainian Hryvnia"
 };
 
-// Assuming the function getCountryNameFromWeatherAPI(city) exists and returns the country name based on the city.
 async function getCountryNameFromWeatherAPI(cityName) {
   try {
       await getWeatherData(cityName); // Function from weather.js, which sets the global variable countryID
@@ -275,8 +274,6 @@ function createUserCurrencySelector() {
         currencySelectorContainer.appendChild(select);
     }
 }
-
-
 
 // Function for currency conversion
 async function convertCurrency(amount, fromCurrency, toCurrency) {
