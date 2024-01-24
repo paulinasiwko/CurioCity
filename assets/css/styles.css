@@ -84,6 +84,14 @@ body {
      border: 2px solid var(--navblue);
      padding: 10px;
  }
+
+ .pizzaImage {
+    max-width: 300px;
+    max-height: 300px;
+    margin-bottom: 20px;
+    border: 2px solid var(--navblue);
+    padding: 10px;
+}
  
  #food a {
      display: block;
