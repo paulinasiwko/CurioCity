@@ -30,16 +30,25 @@ function displayRecipe(food) {
         <h5 class="card-title">Food that goes great with the movie</h5>
         <h5 class="foodTitle">${recipeName}</h5>
         <p><h6>Cusine type:</h6> ${cusineType}</p>
-        <img src="${image}" alt="${recipeName} photo" class="foodImg">
-        <a href="${recipeLink}">Click here to see full recipe.</a>
-        <h6>Shopping list: </h6>
+        <div class="food-container">
+            <div>
+                <img src="${image}" alt="${recipeName} photo" class="foodImg">
+                <a href="${recipeLink}">Click here to see full recipe.</a>
+            </div>
+            <div>
+                <h6>Shopping list: </h6>
+                <div id="list"></div>
+            </div>
+        </div>
     `; 
+
+    const listDiv = document.getElementById("list");
 
     for (let i = 0; i < ingredients.length; i++) {
         const ingredient = ingredients[i];
         const ingredientEl = document.createElement("li");
         ingredientEl.textContent = ingredient;
-        foodDiv.append(ingredientEl);
+        listDiv.append(ingredientEl);
     }
 } else {
 

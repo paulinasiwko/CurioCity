@@ -87,6 +87,16 @@ body {
  
  #food a {
      display: block;
+
+ }
+
+ .food-container {
+    display: flex;
+ }
+
+ #list {
+    text-align: left;
+    margin-left: 40px;
  }
  
  .movies-card {
