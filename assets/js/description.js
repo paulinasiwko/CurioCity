@@ -27,9 +27,9 @@ async function fetchWikipediaSummary(searchTerm, maxWords = 400) {
 
 document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
-    const cityName = params.get('city');
+    let cityName = params.get('city');
 
-    cityName.charAt(0).toUpperCase() + cityName.slice(1);
+    cityName = cityName.charAt(0).toUpperCase() + cityName.slice(1);
 
     if (cityName) {
         fetchWikipediaSummary(cityName).then(summary => {
