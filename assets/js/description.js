@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
     const cityName = params.get('city');
 
+    cityName.charAt(0).toUpperCase() + cityName.slice(1);
+
     if (cityName) {
         fetchWikipediaSummary(cityName).then(summary => {
             if (summary) {
