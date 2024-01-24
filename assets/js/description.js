@@ -32,7 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cityName) {
         fetchWikipediaSummary(cityName).then(summary => {
             if (summary) {
-                document.getElementById('description').innerHTML = summary; // Use innerHTML to render the link
+                document.getElementById('description').innerHTML = `
+                <h5 class="card-title">${cityName}</h5>
+                ${summary}
+                `; // Use innerHTML to render the link
             } else {
                 document.getElementById('description').innerText = "Description not found.";
             }

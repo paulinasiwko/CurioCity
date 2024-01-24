@@ -61,13 +61,6 @@ function updateUI(weatherData) {
             <p>Wind Speed: ${currentWeather.wind.speed} m/s</p>
         `;
     }
-
-    if (mainCardContainer) {
-        mainCardContainer.innerHTML = `
-            <h5 class="card-title">${weatherData.city.name}, ${weatherData.city.country}</h5>
-            <p>Some description about this place</p>
-        `;
-    }
 }
 
 // Function to get the stored city coordinates
