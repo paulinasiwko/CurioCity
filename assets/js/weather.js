@@ -51,10 +51,9 @@ function formatDate(timestamp) {
 function updateUI(weatherData) {
     const currentWeather = weatherData.list[0];
     const todayContainer = document.getElementById('today');
-    const mainCardContainer = document.getElementById('description');
     if (todayContainer) {
         todayContainer.innerHTML = `
-            <h4>Current Weather in ${weatherData.city.name}</h4>            
+            <h5 class="card-title">Current Weather in ${weatherData.city.name}</h5>            
             <img src="http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}.png" alt="Weather icon">
             <p>Date: ${formatDate(currentWeather.dt)}</p>
             <p>Temperature: ${currentWeather.main.temp}°C</p>
