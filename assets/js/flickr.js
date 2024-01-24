@@ -9,6 +9,8 @@ function getImage(city) {
             return response.json();
         })
         .then(function(data) {
+
+            if(data.photos && data.photos.photo.length > 0) {
             const imageServer = data.photos.photo[0].server;
             const imageId = data.photos.photo[0].id;
             const imageSecret = data.photos.photo[0].secret;
@@ -17,8 +19,16 @@ function getImage(city) {
             
             const displayImage = $("<img>").attr("src", imageURL)
             $("#image-city").append(displayImage);
-
+            } else {
+                const alternateImage = $("<img>").attr("src", "./assets/img/city_sunset.jpg");
+                $("#image-city").append(alternateImage);
+            }
         })
+        .catch(function(error) {
+            console.error("Error fetching data from Flickr server:", error);
+            const alternateImage = $("<img>").attr("src", "./assets/img/city_sunset.jpg");
+            $("#image-city").append(alternateImage);
+        });
 }
 
 
