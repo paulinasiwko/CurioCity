@@ -254,7 +254,6 @@ async function getCountryNameFromWeatherAPI(cityName) {
 
 // Function to get the currency code based on the country name
 function getCurrencyCode(countryName) {
-  console.log(countryName);
   return countryCurrencyMapping[countryName];
 }
 
