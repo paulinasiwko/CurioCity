@@ -296,7 +296,8 @@ async function initializeCurrencyExchange() {
     createUserCurrencySelector(); // Creating a currency selector
 
     const params = new URLSearchParams(window.location.search);
-    const city = params.get('city');
+    let city = params.get('city');
+    city = city.charAt(0).toUpperCase() + city.slice(1);
     if (!city) return;
 
     const countryName = await getCountryNameFromWeatherAPI(city); 
