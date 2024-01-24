@@ -46,14 +46,14 @@ To install and run this CurioCity:
 
 SCREEN SHOT
 
-### Link to the Weather Dashboard
+### Link to the working app
 https://paulinasiwko.github.io/CurioCity/
 
 ## Credits
 
 Special acknowledgments to:
 
-- OpenWeatherMap, Edamam, TMBD, Wikipedia, Flickr and other API providers for data.
+- OpenWeatherMap, Edamam, TMBD, Wikipedia, Flickr, exchangerate-api and other API providers for data.
 - Stack Overflow, MDN Web Docs, and the broader development community for guidance and support.
 - Our Instructors, TAs and friends for help and understand where is a problem and how to solve it.
 
@@ -73,4 +73,4 @@ The success of CurioCity is attributed to the dedicated efforts of our talented 
 - CSS3
 - Bootstrap 5
 - JavaScript
-- Multiple Server-Side APIs (Weather, Images, Video, etc.)
+- Multiple Server-Side APIs
