@@ -17,23 +17,19 @@
 </head>
 
 <body>
-    <div class="container-centered">
-    <div class="px-4 py-5 my-5 text-center background">
+    <div class="text-center background">
         <img class="d-block mx-auto mb-4" src="./assets/img/logo.png" alt="" width="400" height="400">
         <h1 class="display-5 fw-bold text-body-emphasis">Ready to explore? Where to?</h1>
         <h6>Please type in a city!</h6>
         <div class="col-lg-6 mx-auto">
             <form id="cityForm" action="landing.html" method="get">
-                <input type="text" id="cityInput" name="city" class="form-control m-3" aria-label="City input" aria-describedby="inputGroup-sizing-default">
+                <input type="text" id="cityInput" name="city" class="form-control responsive-input" aria-label="City input" aria-describedby="inputGroup-sizing-default">
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="submit" id="searchButton" class="btn btn-primary btn-lg px-4 gap-3">Search</button>
-                    <button type="button" id="luckyButton" class="btn btn-outline-secondary btn-lg px-4">I'm feeling lucky!</button>
+                    <button type="submit" id="searchButton" class="btn btn-primary btn-lg responsive-button">Search</button>
+                    <button type="button" id="luckyButton" class="btn btn-outline-secondary btn-lg responsive-button">I'm feeling lucky!</button>
                 </div>
             </form>
         </div>
-    </div>
-    </div>
-    
     <footer>
         <div class="footer-container">
             <p>© 2024 CurioCity, Inc. All rights reserved.</p>
