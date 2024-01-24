@@ -47,6 +47,10 @@ body {
      border-radius: 10px;
  }
  
+ h3{
+    text-align: center;
+ }
+
  .card-text {
      margin-top: 20px;
      margin-bottom: 25px;
@@ -250,7 +254,7 @@ body {
 }
 
 footer {
-    background: transparent;
+    background: white;
 }
 
 .sign-up{
