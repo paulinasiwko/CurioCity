@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if(luckyButton) {
         luckyButton.addEventListener('click', function() {  
           var cities = ["Paris", "Dubai", "Madrid", "Tokyo", "Amsterdam", "Berlin", "Rome",
-            "New York", "Barcelona", "London", "Singapore", "Munich", "Milan", "Seoul", "Dublin",
+            "New York City", "Barcelona", "London", "Singapore", "Munich", "Milan", "Seoul", "Dublin",
             "Osaka", "Hong Kong", "Vienna", "Los Angeles", "Lisbon", "Prague", "Sydney", "Istanbul",
             "Melbourne", "Orlando", "Frankfurt", "Florence", "Taipei", "Toronto", "Athens", "Zurich",
             "Bangkok", "Las Vegas", "Miami", "Venice", "Abu Dhabi", "Stockholm", "Brussels", "Tel Aviv",

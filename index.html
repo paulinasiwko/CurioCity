@@ -23,9 +23,8 @@
         <h1 class="display-5 fw-bold text-body-emphasis">Ready to explore? Where to?</h1>
         <h6>Please type in a city!</h6>
         <div class="col-lg-6 mx-auto">
-            <form id="cityForm">
-                <input type="text" id="cityInput" class="form-control m-3" aria-label="City input"
-                    aria-describedby="inputGroup-sizing-default">
+            <form id="cityForm" action="landing.html" method="get">
+                <input type="text" id="cityInput" name="city" class="form-control m-3" aria-label="City input" aria-describedby="inputGroup-sizing-default">
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                     <button type="submit" id="searchButton" class="btn btn-primary btn-lg px-4 gap-3">Search</button>
                     <button type="button" id="luckyButton" class="btn btn-outline-secondary btn-lg px-4">I'm feeling lucky!</button>
