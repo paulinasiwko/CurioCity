@@ -20,13 +20,21 @@ function getImage(city) {
             const displayImage = $("<img>").attr("src", imageURL)
             $("#image-city").append(displayImage);
             } else {
-                const alternateImage = $("<img>").attr("src", "./assets/img/city_sunset.jpg");
+                const alternateImage = $("<img>").attr({
+                    src: "./assets/img/city_sunset.jpg",
+                    width: `267px`,
+                    height: `400px`
+                });
                 $("#image-city").append(alternateImage);
             }
         })
         .catch(function(error) {
             console.error("Error fetching data from Flickr server:", error);
-            const alternateImage = $("<img>").attr("src", "./assets/img/city_sunset.jpg");
+            const alternateImage = $("<img>").attr({
+                src: "./assets/img/city_sunset.jpg",
+                width: `267px`,
+                height: `400px`
+            });
             $("#image-city").append(alternateImage);
         });
 }
