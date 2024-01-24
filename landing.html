@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +12,9 @@
   <link rel="stylesheet" href="./assets/css/styles.css"/>
   <title>CurioCity - Here are your results!</title>
 </head>
+
 <body>
+
   <!-- Navbar Code -->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
@@ -21,10 +24,51 @@
       <div class="collapse navbar-collapse">
         <h3>Embark on a Journey of Wonders with CurioCity!</h3>
       </div>
-      <button class="btn btn-sm" type="button">Get in touch</button>
-    </div>
+      <div class="nav-buttons">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Pages
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#weather">Weather</a>
+            <a class="dropdown-item" href="#currency-exchange">Currency Exchange</a>
+            <a class="dropdown-item" href="#food">Recipes</a>
+            <a class="dropdown-item" href=".movies-card">Movies</a>
+          </div>
+        </div>
+        <button class="btn btn-sm" type="button" href="www.google.com">Get in touch</button>
+      </div>
   </nav>
-  <div class="b-example-divider"></div>
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-light container-fluid">
+        <div class="container-fluid navbar">
+          <a class="landing-logo" href="index.html">
+            <img src="./assets/img/logo.png" alt="logo" width="70" class="d-inline-block align-text-top">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#weather">Weather</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#currency-exchange">Currency</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#food">Recipes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#movies">Movies</a>
+              </li>
+            </ul>
+          </div>
+          <button class="btn btn-sm" type="button" href="www.google.com">Get in touch</button> 
+        </div>
+      </nav>
+
   <!-- Hero Section -->
   <section class="px-4 py-5 mt-5 text-center">
     <div class="d-flex flex-row">
@@ -46,15 +90,15 @@
   <section class="px-4">
     <div class="d-flex flex-row">
       <div class="card w-50 me-4">
-        <div id="food" class="card-body">
-        </div>
+        <div id="food" class="card-body"></div>
       </div>
       <div class="card w-50 movies-card">
         <div class="card-body">
           <h5 class="card-title">Movies</h5>
           <div id="carousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
@@ -76,46 +120,22 @@
   <!-- Footer -->
   <footer class="py-5">
     <div class="container">
-    <div class="row">
-      <div class="col-6 col-md-2 mb-3">
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md-2 mb-3">
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Careers</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-        </ul>
-      </div>
-      <div class="col-md-5 offset-md-1 mb-3">
-        <form>
-          <h5>Subscribe to our newsletter</h5>
-          <p>Monthly digest of what's new and exciting from us.</p>
-          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-            <label for="newsletter1" class="visually-hidden">Email address</label>
-            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-            <button class="sign-up" type="button">Subscribe</button>
-          </div>
-        </form>
+      <div class="row justify-content-center">
+        <div class="col-12 text-center mb-3">
+          <p class="text-muted small">© 2024 CurioCity, Inc. All rights reserved.</p>
+        </div>
+        <div class="col-12 text-center">
+          <!-- GitHub Links -->
+          <a href="https://github.com/Contributor1" class="me-2">Contributor 1</a>
+          <a href="https://github.com/Contributor2" class="me-2">Contributor 2</a>
+          <a href="https://github.com/Contributor3" class="me-2">Contributor 3</a>
+          <a href="https://github.com/Contributor4" class="me-2">Contributor 4</a>
+          <a href="https://github.com/Contributor5" class="me-2">Contributor 5</a>
+        </div>
       </div>
     </div>
-    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-      <p>© 2023 CurioCity, Inc. All rights reserved.</p>
-      <ul class="list-unstyled d-flex">
-        <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-twitter"></i></a></li>
-        <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-        <li class="ms-3"><a class="link-dark" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-      </ul>
+    </footer>
     </div>
-</div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   <!-- jQuery -->
