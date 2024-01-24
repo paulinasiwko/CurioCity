@@ -1,4 +1,4 @@
-async function fetchWikipediaSummary(searchTerm, maxWords = 400) {
+async function fetchWikipediaSummary(searchTerm, maxWords = 380) {
     const endpoint = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&origin=*&titles=${encodeURIComponent(searchTerm)}`;
 
     try {
