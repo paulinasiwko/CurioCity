@@ -1,25 +1,76 @@
-# Travel-Planner
+# CurioCity: Your Interactive City Exploration Companion
 
-## User Story
-As an enthusiastic traveller using [...], I want the website to provide a smooth and intuitive experience, allowing me to effortlessly navigate and discover information about my chosen destination.
+## Description
 
-## Responsive Navigation:
-When I access [...] from different devices (desktop, tablet, mobile), I expect the navigation bar to adapt, providing clear menu options like Home, Destinations, Weather, Facts, Food, and Movies.
+CurioCity is an innovative, user-friendly platform that enhances the urban exploration experience. Designed for both avid travelers and curious locals, it offers a comprehensive guide to cities worldwide. By inputting a city name, users receive an array of information: current weather, captivating images, city descriptions, trending movies, local cuisine insights, and a convenient currency converter. This holistic approach, powered by seven different server-side APIs, provides an immersive and informative exploration tool for city enthusiasts.
 
-## Intuitive Destination Search:
-On the homepage, I want a simple user-friendly search bar that makes it easy for me to find my desired destination.
-If I haven't decided on a destination yet, I want the option to explore a "Random Destination" that the website suggests.
+## Table of Contents
 
-## User-Friendly Landing Page:
-There must be an inviting landing page with easy-to-spot navigation elements guiding me to information categories about the destination (Weather, Facts, Food, Movies) 
-On the Food category, I want to see a curated list of typical foods eaten in the selected destination.
-On the Movies category, I want to see both movies that feature the destination and movies specifically about that destination.
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Features](#features)
+  - [Screenshot and links](#screenshot-and-links)
+  - [Credits](#credits)
+  - [Technologies Used](#technologies-used)
 
-I want to search for a country of interest
-I want see a brief description about the country
-I want to see what are the main / top 5 cities in this country
-I want to see pictures of this location
-I want to know what their foods / snacks of choice are
-I want to see movies / shows about this city
-I want to see movies / shows produced about this city
-I want to see the weather forecast in this location
+## Installation
+
+To install and run this CurioCity:
+
+1. Clone the repository from GitHub.
+
+2. Replace API keys with your personal keys obtained from the respective API providers.
+
+## Usage
+
+1. Enter the name of a city in the search box.
+
+2. Browse through the comprehensive data provided, including weather, images, city descriptions, videos, cuisine, and currency exchange rates.
+
+3. Each search will be stored in your history for easy future reference.
+
+## Features
+
+**Current Weather Data:** Access up-to-date weather information for any searched city.
+
+**City Images and Description:** Explore beautiful images and detailed descriptions of cities.
+
+**Trending Movies:** Watch popular videos related to the selected city and country.
+
+**Local Cuisine:** Discover the culinary delights that the city offers.
+
+**Responsive and Interactive UI:** A user-friendly interface that responds to your every input.
+
+## Screenshot and links
+
+SCREEN SHOT
+
+### Link to the Weather Dashboard
+https://paulinasiwko.github.io/CurioCity/
+
+## Credits
+
+Special acknowledgments to:
+
+- OpenWeatherMap, Edamam, TMBD, Wikipedia, Flickr and other API providers for data.
+- Stack Overflow, MDN Web Docs, and the broader development community for guidance and support.
+- Our Instructors, TAs and friends for help and understand where is a problem and how to solve it.
+
+## Contributors
+
+The success of CurioCity is attributed to the dedicated efforts of our talented team:
+
+1. [Paulina Siwko](https://github.com/paulinasiwko)
+2. [Nirmean Sawi](https://github.com/Nirmean)
+3. [Divine Ede]
+4. [Tomasz Jasinski](https://github.com/TomixJasina)
+5. [Michal Paleczny](https://github.com/MrKatrish)
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- Bootstrap 5
+- JavaScript
+- Multiple Server-Side APIs (Weather, Images, Video, etc.)
