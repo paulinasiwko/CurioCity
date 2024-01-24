@@ -12,7 +12,12 @@ async function fetchWikipediaSummary(searchTerm, maxWords = 200) {
         let extract = page[pageId].extract;
 
         // Truncate the extract to the specified number of words
-        extract = extract.split(" ").slice(0, maxWords).join(" ") + '...';
+        extract = extract.split(" ").slice(0, maxWords).join(" ");
+
+        // Add 'Keep Reading' link
+        const articleUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(searchTerm)}`;
+        extract += `... <a href="${articleUrl}" target="_blank">Continue Reading...</a>`;
+
         return extract;
     } catch (error) {
         console.error('Fetching Wikipedia summary failed: ', error);
@@ -27,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cityName) {
         fetchWikipediaSummary(cityName).then(summary => {
             if (summary) {
-                document.getElementById('description').innerText = summary;
+                document.getElementById('description').innerHTML = summary; // Use innerHTML to render the link
             } else {
                 document.getElementById('description').innerText = "Description not found.";
             }
