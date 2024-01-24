@@ -1,4 +1,4 @@
-async function fetchWikipediaSummary(searchTerm) {
+async function fetchWikipediaSummary(searchTerm, maxWords = 200) {
     const endpoint = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&origin=*&titles=${encodeURIComponent(searchTerm)}`;
 
     try {
@@ -9,7 +9,11 @@ async function fetchWikipediaSummary(searchTerm) {
         const data = await response.json();
         const page = data.query.pages;
         const pageId = Object.keys(page)[0];
-        return page[pageId].extract;
+        let extract = page[pageId].extract;
+
+        // Truncate the extract to the specified number of words
+        extract = extract.split(" ").slice(0, maxWords).join(" ") + '...';
+        return extract;
     } catch (error) {
         console.error('Fetching Wikipedia summary failed: ', error);
         return null;

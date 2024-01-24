@@ -258,7 +258,7 @@ function getCurrencyCode(countryName) {
   return countryCurrencyMapping[countryName];
 }
 
-// Funkcja do dodania opcji wyboru waluty
+// Function to add currency selection option
 function createUserCurrencySelector() {
     const select = document.createElement('select');
     select.id = 'userCurrencySelect';
@@ -270,7 +270,7 @@ function createUserCurrencySelector() {
         select.appendChild(option);
     }
 
-    // Dodaj select do odpowiedniego miejsca w DOM, np.:
+    // Add the select to the appropriate place in the DOM, for example:
     const currencySelectorContainer = document.getElementById('currencySelectorContainer');
     if (currencySelectorContainer) {
         currencySelectorContainer.appendChild(select);
@@ -279,7 +279,7 @@ function createUserCurrencySelector() {
 
 
 
-// Funkcja do konwersji walut
+// Function for currency conversion
 async function convertCurrency(amount, fromCurrency, toCurrency) {
     const url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
     try {
@@ -292,9 +292,9 @@ async function convertCurrency(amount, fromCurrency, toCurrency) {
     }
 }
 
-// Główna funkcja do inicjalizacji konwersji walut
+// Main function for initializing currency conversion
 async function initializeCurrencyExchange() {
-    createUserCurrencySelector(); // Tworzenie selektora walut
+    createUserCurrencySelector(); // Creating a currency selector
 
     const params = new URLSearchParams(window.location.search);
     const city = params.get('city');
@@ -306,11 +306,11 @@ async function initializeCurrencyExchange() {
     const currencyCode = getCurrencyCode(countryName);
     if (!currencyCode) return;
 
-    // Pobieranie wybranej waluty użytkownika
+    // Retrieving the user's chosen currency
     const userCurrencySelect = document.getElementById('userCurrencySelect');
     const userCurrency = userCurrencySelect ? userCurrencySelect.value : 'USD';
 
-    const userAmount = 100; // Przykładowa kwota
+    const userAmount = 100; // Example amount
     const convertedAmount = await convertCurrency(userAmount, userCurrency, currencyCode);
 
     const resultContainer = document.getElementById("currency-exchange");
