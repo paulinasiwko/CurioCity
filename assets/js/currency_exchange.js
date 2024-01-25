@@ -91,7 +91,8 @@ const countryCurrencyMapping = {
     "CH": "CHF",
     "TR": "TRY",
     "UA": "UAH",
-    "VA": "EUR"
+    "VA": "EUR",
+    "MA": "MAD",
 };
 
 const countryCodeToNameMapping = {
@@ -180,7 +181,8 @@ const countryCodeToNameMapping = {
     "RS": "Serbia",
     "SJ": "Svalbard and Jan Mayen",
     "UA": "Ukraine",
-    "VA": "Vatican City"
+    "VA": "Vatican City",
+    "MA": "Morocco"
 };
 
 const currencyCodeToNameMapping = {
@@ -239,7 +241,8 @@ const currencyCodeToNameMapping = {
     "MDL": "Moldovan Leu",
     "RON": "Romanian Leu",
     "RSD": "Serbian Dinar",
-    "UAH": "Ukrainian Hryvnia"
+    "UAH": "Ukrainian Hryvnia",
+    "MAD": "Morocan Dirham"
 };
 
 async function getCountryNameFromWeatherAPI(cityName) {

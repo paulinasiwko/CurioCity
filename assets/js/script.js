@@ -66,14 +66,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if(luckyButton) {
         luckyButton.addEventListener('click', function() {  
           var cities = ["Paris", "Dubai", "Madrid", "Tokyo", "Amsterdam", "Berlin", "Rome",
-            "New York City", "Barcelona", "London", "Singapore", "Munich", "Milan", "Seoul", "Dublin",
-            "Osaka", "Hong Kong", "Vienna", "Los Angeles", "Lisbon", "Prague", "Sydney", "Istanbul",
-            "Melbourne", "Orlando", "Frankfurt", "Florence", "Taipei", "Toronto", "Athens", "Zurich",
-            "Bangkok", "Las Vegas", "Miami", "Venice", "Abu Dhabi", "Stockholm", "Brussels", "Tel Aviv",
-            "San Francisco", "Shanghai", "Warsaw", "Copenhagen", "Nice", "Budapest", "Valencia", "Mexico City",
-            "Antalya", "Beijing", "Edinburgh", "Porto", "Jerusalem", "Montreal", "Rhodes", "Verona",
-            "Lima", "Phuket", "Delhi", "Cairo", "Oslo", "Bangladore", "Chicago", "Helsinki", "Boston",
-            "Moscow", "Casablanca"
+            "New York City", "Barcelona", "London", "Munich", "Milan", "Seoul", "Dublin",
+            "Vienna", "Los Angeles", "Lisbon", "Prague", "Sydney", "Istanbul", "Moscow", 
+            "Orlando", "Frankfurt", "Florence", "Toronto", "Athens", "Zurich",
+            "Bangkok", "Las Vegas", "Miami", "Abu Dhabi", "Stockholm", "Brussels", "Tel Aviv",
+            "San Francisco", "Shanghai", "Budapest", "Valencia", "Mexico City",
+            "Beijing", "Edinburgh", "Porto", "Jerusalem", "Verona", "Casablanca",
+            "Lima", "Phuket", "Delhi", "Cairo", "Oslo", "Chicago", "Helsinki", "Boston"
           ];
           var randomCity = cities[Math.floor(Math.random() * cities.length)];
           randomCity = randomCity.charAt(0).toUpperCase() + randomCity.slice(1);
