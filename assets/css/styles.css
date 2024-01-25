@@ -18,9 +18,27 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.landing-logo, .catchphrase {
-    margin-top: -2px;
-    margin-left: -50px;
+.landing-logo a {
+    padding: 0;
+    display: inline-flex; 
+    align-items: center; 
+}
+
+.landing-logo img {
+    max-height: 100%; 
+    max-width: 100%; 
+    height: auto; 
+    margin: 5px; 
+}
+
+.navbar .container-fluid {
+    display: flex; 
+    align-items: center; 
+}
+
+.navbar h3 {
+    flex-grow: 1;
+    text-align: center; 
 }
 
 .btn {
@@ -47,10 +65,6 @@ body {
     border: 2px solid var(--navblue);
     background-color: white;
     border-radius: 10px;
-}
-
-h3 {
-    text-align: center;
 }
 
 .card-text {
