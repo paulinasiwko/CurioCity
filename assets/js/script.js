@@ -91,10 +91,9 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = 'landing.html?city=' + encodeURIComponent(city);
         })
 
-        if(!historyCityArray.includes(city)) {
-            historyCityArray.unshift(city);
-            localStorage.setItem("historyCity", JSON.stringify(historyCityArray));
-            $("#recentCitiesContainer").append(historyButton);
-        }
+        historyCityArray.unshift(city);
+        localStorage.setItem("historyCity", JSON.stringify(historyCityArray));
+        $("#recentCitiesContainer").append(historyButton);
+    
     }
 });
