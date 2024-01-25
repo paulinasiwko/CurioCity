@@ -50,26 +50,21 @@ h6 {
     padding-bottom: 60px;
 }
 
-/* Primary button styles */
-.btn-primary {
-    background-color: #0056b3;
-    transition: background-color 0.3s ease;
+/* Primary and secondary button styles with new color and border */
+.btn, .btn-outline-secondary {
+    background-color: #00EEFF;
+    color: white;
+    border: 2px solid #007BFF; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); 
+    transition: background-color 0.3s ease, border-color 0.5s ease;
 }
 
-/* Hover state for primary buttons */
-.btn-primary:hover {
-    background-color: #00376b;
-}
-
-/* Secondary button styles with outline */
-.btn-outline-secondary {
-    border: 1px solid #6c757d;
-    transition: border-color 0.3s ease;
-}
-
-/* Hover state for secondary outline buttons */
-.btn-outline-secondary:hover {
-    border-color: #565e64;
+/* Hover state for all buttons */
+.btn:hover, .btn-outline-secondary:hover {
+    background-color: #00FFFF;
+    border-color: #55a3f7;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.75);
+    color: #0E7CFF;
 }
 
 /* Footer styles */
@@ -93,6 +88,13 @@ footer {
     position: sticky;
     bottom: 0;
     width: 100%;
+}
+
+.input-error-message {
+    color: red;
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 5px; 
 }
 
 /* Responsive styles for inputs */
