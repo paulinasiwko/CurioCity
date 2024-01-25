@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var cityForm = document.getElementById('cityForm');
   var cityInput = document.getElementById('cityInput');
   var luckyButton = document.getElementById('luckyButton');
-  var originalPlaceholder = cityInput.placeholder; 
 
   function validateInput() {
       if (cityInput.value.length < 4) {
