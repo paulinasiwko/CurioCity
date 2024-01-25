@@ -95,6 +95,7 @@ if(cityForm) {
         event.preventDefault();
         if (validateInput()) {
             var city = cityInput.value;
+            city = city.charAt(0).toUpperCase() + city.slice(1);
             updateRecentCities(city);
             window.location.href = 'landing.html?city=' + encodeURIComponent(city);
         }
