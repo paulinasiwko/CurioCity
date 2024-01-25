@@ -44,7 +44,9 @@ To install and run this CurioCity:
 
 ## Screenshot and links
 
-SCREEN SHOT
+![Homepage](assets/img/homepage.png)
+
+![Landing](<assets/img/landing page.png>)
 
 ### Link to the working app
 https://paulinasiwko.github.io/CurioCity/
