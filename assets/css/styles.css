@@ -112,6 +112,10 @@ footer:before {
     margin-bottom: 20px;
 }
 
+.hero-text {
+    padding-top: 25px;
+}
+
 /* All cards */
 
 .card-title {

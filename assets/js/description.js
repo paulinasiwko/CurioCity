@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetchWikipediaSummary(cityName).then(data => {
             if (data.extract) {
                 document.getElementById('description').innerHTML = `<h5 class="card-title">${cityName}</h5>
-                ${data.extract}`;
+                <p class="hero-text">${data.extract}</p>`;
                 if (data.imageUrl) {
                     document.getElementById('image-city').innerHTML = `<img src="${data.imageUrl}" alt="${cityName}" style="max-width:100%;">`;
                 }
