@@ -94,6 +94,10 @@ footer {
     display: none;
 }
 
+.homepage-footer {
+    margin: 30px 0;
+}
+
 @media only screen and (max-width: 768px) {
     .btn-primary, .btn-outline-secondary {
         font-size: 16px;
