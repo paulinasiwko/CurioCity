@@ -1,14 +1,39 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var cityForm = document.getElementById('cityForm');
-    var luckyButton = document.getElementById('luckyButton');
-  
-    if(cityForm) {
-        cityForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            var city = document.getElementById('cityInput').value;
-            window.location.href = 'landing.html?city=' + encodeURIComponent(city);
-        });
-    }
+  var cityForm = document.getElementById('cityForm');
+  var cityInput = document.getElementById('cityInput');
+  var luckyButton = document.getElementById('luckyButton');
+  var originalPlaceholder = cityInput.placeholder; // Zapamiętanie oryginalnego tekstu placeholder
+
+  // Funkcja do walidacji wprowadzonego miasta
+  function validateInput() {
+      if (cityInput.value.length < 4) {
+          cityInput.style.borderColor = 'red';
+          cityInput.placeholder = 'Please enter a valid city name in this field'; // Ustawienie tekstu błędu jako placeholder
+          cityInput.value = ''; // Czyszczenie bieżącej wartości
+          return false;
+      }
+      return true;
+  }
+
+  // Obsługa zdarzenia submit dla formularza
+  if(cityForm) {
+      cityForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+          if (validateInput()) {
+              var city = cityInput.value;
+              window.location.href = 'landing.html?city=' + encodeURIComponent(city);
+          }
+      });
+  }
+
+  // Przywrócenie oryginalnego placeholdera i stylów przy kliknięciu w pole wprowadzania
+  if(cityInput) {
+      cityInput.addEventListener('click', function() {
+          cityInput.style.borderColor = '';
+          cityInput.placeholder = originalPlaceholder; // Przywrócenie oryginalnego placeholder
+      });
+  }
+
   
     if(luckyButton) {
         luckyButton.addEventListener('click', function() {  
@@ -23,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "Moscow", "Casablanca"
           ];
           var randomCity = cities[Math.floor(Math.random() * cities.length)];
-          window.location.href = 'landing.html?city=' + encodeURIComponent(randomCity);
-      });
-  }
+            window.location.href = 'landing.html?city=' + encodeURIComponent(randomCity);
+        });
+    }
 });
