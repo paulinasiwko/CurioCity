@@ -2,20 +2,18 @@ document.addEventListener('DOMContentLoaded', function() {
   var cityForm = document.getElementById('cityForm');
   var cityInput = document.getElementById('cityInput');
   var luckyButton = document.getElementById('luckyButton');
-  var originalPlaceholder = cityInput.placeholder; // Zapamiętanie oryginalnego tekstu placeholder
+  var originalPlaceholder = cityInput.placeholder; 
 
-  // Funkcja do walidacji wprowadzonego miasta
   function validateInput() {
       if (cityInput.value.length < 4) {
           cityInput.style.borderColor = 'red';
-          cityInput.placeholder = 'Please enter a valid city name in this field'; // Ustawienie tekstu błędu jako placeholder
-          cityInput.value = ''; // Czyszczenie bieżącej wartości
+          cityInput.placeholder = 'Please enter a valid city name in here'; 
+          cityInput.value = ''; 
           return false;
       }
       return true;
   }
 
-  // Obsługa zdarzenia submit dla formularza
   if(cityForm) {
       cityForm.addEventListener('submit', function(event) {
           event.preventDefault();
@@ -26,11 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  // Przywrócenie oryginalnego placeholdera i stylów przy kliknięciu w pole wprowadzania
   if(cityInput) {
       cityInput.addEventListener('click', function() {
           cityInput.style.borderColor = '';
-          cityInput.placeholder = originalPlaceholder; // Przywrócenie oryginalnego placeholder
+          cityInput.placeholder = originalPlaceholder;
       });
   }
 
