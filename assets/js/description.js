@@ -1,5 +1,5 @@
-async function fetchWikipediaSummary(searchTerm, maxWords = 380) {
-    const endpoint = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&origin=*&titles=${encodeURIComponent(searchTerm)}`;
+async function fetchWikipediaSummary(searchTerm, maxWords = 200) {
+    const endpoint = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts%7Cpageimages&exintro&explaintext&redirects=1&origin=*&titles=${encodeURIComponent(searchTerm)}&pithumbsize=1000`;
 
     try {
         const response = await fetch(endpoint);
@@ -10,6 +10,7 @@ async function fetchWikipediaSummary(searchTerm, maxWords = 380) {
         const page = data.query.pages;
         const pageId = Object.keys(page)[0];
         let extract = page[pageId].extract;
+        let imageUrl = page[pageId].thumbnail ? page[pageId].thumbnail.source : '';
 
         // Truncate the extract to the specified number of words
         extract = extract.split(" ").slice(0, maxWords).join(" ");
@@ -18,28 +19,27 @@ async function fetchWikipediaSummary(searchTerm, maxWords = 380) {
         const articleUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(searchTerm)}`;
         extract += `... <a href="${articleUrl}" target="_blank">Continue Reading...</a>`;
 
-        return extract;
+        return { extract, imageUrl };
     } catch (error) {
         console.error('Fetching Wikipedia summary failed: ', error);
-        return null;
+        return { extract: null, imageUrl: null };
     }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
-    let cityName = params.get('city');
-
-    cityName = cityName.charAt(0).toUpperCase() + cityName.slice(1);
+    const cityName = params.get('city');
 
     if (cityName) {
-        fetchWikipediaSummary(cityName).then(summary => {
-            if (summary) {
-                document.getElementById('description').innerHTML = `
-                <h5 class="card-title">${cityName}</h5>
-                ${summary}
-                `; // Use innerHTML to render the link
+        fetchWikipediaSummary(cityName).then(data => {
+            if (data.extract) {
+                document.getElementById('description').innerHTML = data.extract;
+                if (data.imageUrl) {
+                    document.getElementById('image-city').innerHTML = `<img src="${data.imageUrl}" alt="${cityName}" style="max-width:100%;">`;
+                }
             } else {
                 document.getElementById('description').innerText = "Description not found.";
+                document.getElementById('image-city').innerText = "Image not found.";
             }
         });
     }
