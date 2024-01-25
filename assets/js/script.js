@@ -1,17 +1,31 @@
 const localStorageData = JSON.parse(localStorage.getItem("historyCity")) || [];
 
 if (localStorageData != []) {
-    $(localStorageData).each(function(i) {
-        $("#historyParagraph").removeClass("hidden");
-        const searchHistory = $("<button>").text(localStorageData[i]).addClass("btn btn-info btn-lg responsive-button m-2");
 
-        $(searchHistory).on("click", function(e) {
-            e.preventDefault();
-            window.location.href = 'landing.html?city=' + encodeURIComponent(localStorageData[i]);
+    if (localStorageData.length < 5) {
+        $(localStorageData).each(function(i) {
+            $("#historyParagraph").removeClass("hidden");
+            const searchHistory = $("<button>").text(localStorageData[i]).addClass("btn btn-info btn-lg responsive-button m-2");
+    
+            $(searchHistory).on("click", function(e) {
+                e.preventDefault();
+                window.location.href = 'landing.html?city=' + encodeURIComponent(localStorageData[i]);
+            })
+    
+            $("#recentCitiesContainer").append(searchHistory);
         })
-
-        $("#recentCitiesContainer").append(searchHistory);
-    })
+    } else {
+        for (let i = 0; i < 5; i++) {
+            const searchHistory = $("<button>").text(localStorageData[i]).addClass("btn btn-info btn-lg responsive-button m-2");
+    
+            $(searchHistory).on("click", function(e) {
+                e.preventDefault();
+                window.location.href = 'landing.html?city=' + encodeURIComponent(localStorageData[i]);
+            })
+            $("#historyParagraph").removeClass("hidden");
+            $("#recentCitiesContainer").append(searchHistory);
+        }    
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -35,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
           event.preventDefault();
           if (validateInput()) {
               var city = cityInput.value;
+              city = city.charAt(0).toUpperCase() + city.slice(1);
               history(city);
               window.location.href = 'landing.html?city=' + encodeURIComponent(city);
           }
@@ -62,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "Moscow", "Casablanca"
           ];
           var randomCity = cities[Math.floor(Math.random() * cities.length)];
+          randomCity = randomCity.charAt(0).toUpperCase() + randomCity.slice(1);
           history(randomCity);
             window.location.href = 'landing.html?city=' + encodeURIComponent(randomCity);
         });
@@ -77,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
 
         if(!historyCityArray.includes(city)) {
-            historyCityArray.push(city);
+            historyCityArray.unshift(city);
             localStorage.setItem("historyCity", JSON.stringify(historyCityArray));
             $("#recentCitiesContainer").append(historyButton);
         }
