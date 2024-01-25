@@ -12,6 +12,7 @@ CurioCity is an innovative, user-friendly platform that enhances the urban explo
   - [Features](#features)
   - [Screenshot and links](#screenshot-and-links)
   - [Credits](#credits)
+  - [Contributors](#contributors)
   - [Technologies Used](#technologies-used)
 
 ## Installation
