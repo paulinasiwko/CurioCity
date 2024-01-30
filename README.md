@@ -66,9 +66,8 @@ The success of CurioCity is attributed to the dedicated efforts of our talented 
 
 1. [Paulina Siwko](https://github.com/paulinasiwko)
 2. [Nirmean Sawi](https://github.com/Nirmean)
-3. [Divine Ede]
-4. [Tomasz Jasinski](https://github.com/TomixJasina)
-5. [Michal Paleczny](https://github.com/MrKatrish)
+3. [Tomasz Jasinski](https://github.com/TomixJasina)
+4. [Michal Paleczny](https://github.com/MrKatrish)
 
 ## Technologies Used
 
