@@ -54,7 +54,7 @@ function updateUI(weatherData) {
     if (todayContainer) {
         todayContainer.innerHTML = `
             <h5 class="card-title">Current Weather in ${weatherData.city.name}</h5>            
-            <img src="http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}.png" alt="Weather icon">
+            <img src="https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}.png" alt="Weather icon">
             <p>Date: ${formatDate(currentWeather.dt)}</p>
             <p>Temperature: ${currentWeather.main.temp}°C</p>
             <p>Humidity: ${currentWeather.main.humidity}%</p>
