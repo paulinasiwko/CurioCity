@@ -17,26 +17,26 @@
 </head>
 
 <body>
-    <div class="text-center background">
-        <img class="d-block mx-auto mb-4" src="./assets/img/logo.png" alt="" width="400" height="400">
-        <h1 class="display-5 fw-bold text-body-emphasis">Ready to explore? Where to?</h1>
-        <h6>Please type in a city!</h6>
-        <div class="col-lg-6 mx-auto">
+    <div class="container-fluid layout">
+        <img src="./assets/img/logo.png" alt="Logo" class="logo">
+        <div>
+            <h1>Ready to explore? Where to?</h1>
+            <h6>Please type in a city!</h6>    
             <form id="cityForm" action="landing.html" method="get">
                 <input type="text" id="cityInput" name="city" class="form-control responsive-input" aria-label="City input" aria-describedby="inputGroup-sizing-default">
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="submit" id="searchButton" class="btn btn-primary btn-lg responsive-button">Search</button>
-                    <button type="button" id="luckyButton" class="btn btn-outline-secondary btn-lg responsive-button">I'm feeling lucky!</button>
+                <div>
+                    <button type="submit" id="searchButton" class="btn">Search</button>
+                    <button type="button" id="luckyButton" class="btn">I'm feeling lucky!</button>
                 </div>
             </form>
+            <div id="recentCitiesContainer">
+                <p id="historyParagraph" class="hidden">Your recent searches:</p>
+            </div>    
         </div>
-        <div id="recentCitiesContainer">
-            <p id="historyParagraph" class="recent-searches-description m-3 hidden">Your recent searches:</p>
-        </div>
-        <div class="homepage-footer">
-            <p>© 2024 CurioCity, Inc. All rights reserved.</p>
-        </div>
-
+    </div>
+    <!-- <footer class="footer">
+        <p class="footerText">© 2024 CurioCity, Inc. All rights reserved.</p>
+    </footer> -->
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Day.js -->
