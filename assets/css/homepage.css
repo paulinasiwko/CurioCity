@@ -78,7 +78,7 @@ body {
     }
 }
 
-/* .footer {
+.footer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -93,4 +93,4 @@ body {
 .footerText {
     margin: auto;
     padding: 8px;
-} */
+}

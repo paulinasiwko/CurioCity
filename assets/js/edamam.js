@@ -27,7 +27,7 @@ function displayRecipe(food) {
     const foodDiv = document.getElementById("food");
 
     foodDiv.innerHTML = `
-        <h5 class="card-title">Food that goes with pair in the City!</h5>
+        <h5 class="card-title">Food that pairs well with this city!</h5>
         <h5 class="foodTitle">${recipeName}</h5>
         <p><h6>Cusine type:</h6> ${cusineType}</p>
         <div class="food-container">

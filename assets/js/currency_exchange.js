@@ -316,7 +316,7 @@ async function initializeCurrencyExchange() {
     const resultContainer = document.getElementById("currency-exchange");
     if (resultContainer) {
         resultContainer.innerHTML = `
-            <h5 class="card-title">How much money will i get?</h5>
+            <h5 class="card-title">How much money will I get?</h5>
             <p class="hero-text">${city} is in ${countryCodeToNameMapping[countryName]}. They use ${currencyCodeToNameMapping[currencyCode]} (${currencyCode})! Here is a simple currency exchanger - 100 ${currencyCodeToNameMapping[userCurrency]} will give you ${convertedAmount} ${currencyCodeToNameMapping[currencyCode]}!</p>
         `;
     }
