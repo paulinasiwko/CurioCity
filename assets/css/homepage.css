@@ -2,6 +2,7 @@
     --pink: #EFEBF2;
     --purple: #30105A;
     --btnPink: #E3BAC6;
+    --grey: grey;
 }
 
 body {
@@ -21,6 +22,50 @@ body {
     max-width: 100%;
     height: auto;
 }
+
+.title {
+    font-family: 'Angkor';
+}
+
+.inputArea {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.inputArea:hover {
+    border: 2px solid var(--btnPink);
+}
+
+.btn {
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+.btn:hover {
+    scale: 1.05;
+    color: white;
+}
+
+.purpleBtn {
+    background-color: var(--purple);
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.pinkBtn {
+    background-color: var(--btnPink);
+    margin-right: 5px;
+}
+
+#recentCitiesContainer {
+    margin-top: 50px;
+}
+
+#historyParagraph {
+    color: var(--grey);
+}
+
 
 .hidden {
     display: none;

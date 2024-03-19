@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     
+    <link href='https://fonts.googleapis.com/css?family=Angkor' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -20,13 +21,13 @@
     <div class="container-fluid layout">
         <img src="./assets/img/logo.png" alt="Logo" class="logo">
         <div>
-            <h1>Ready to explore? Where to?</h1>
+            <h1 class="title">Ready to explore? Where to?</h1>
             <h6>Please type in a city!</h6>    
             <form id="cityForm" action="landing.html" method="get">
-                <input type="text" id="cityInput" name="city" class="form-control responsive-input" aria-label="City input" aria-describedby="inputGroup-sizing-default">
+                <input type="text" id="cityInput" name="city" class="form-control responsive-input inputArea" aria-label="City input" aria-describedby="inputGroup-sizing-default">
                 <div>
-                    <button type="submit" id="searchButton" class="btn">Search</button>
-                    <button type="button" id="luckyButton" class="btn">I'm feeling lucky!</button>
+                    <button type="submit" id="searchButton" class="btn purpleBtn">Search</button>
+                    <button type="button" id="luckyButton" class="btn purpleBtn">I'm feeling lucky!</button>
                 </div>
             </form>
             <div id="recentCitiesContainer">

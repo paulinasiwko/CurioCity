@@ -5,7 +5,7 @@ if (localStorageData != []) {
     if (localStorageData.length < 5) {
         $(localStorageData).each(function(i) {
             $("#historyParagraph").removeClass("hidden");
-            const searchHistory = $("<button>").text(localStorageData[i]).addClass("btn btn-info btn-lg responsive-button m-2");
+            const searchHistory = $("<button>").text(localStorageData[i]).addClass("btn pinkBtn");
     
             $(searchHistory).on("click", function(e) {
                 e.preventDefault();
@@ -16,7 +16,7 @@ if (localStorageData != []) {
         })
     } else {
         for (let i = 0; i < 5; i++) {
-            const searchHistory = $("<button>").text(localStorageData[i]).addClass("btn btn-info btn-lg responsive-button m-2");
+            const searchHistory = $("<button>").text(localStorageData[i]).addClass("btn pinkBtn");
     
             $(searchHistory).on("click", function(e) {
                 e.preventDefault();
